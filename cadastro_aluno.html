@@ -10,19 +10,28 @@
 	});
 
 	function validacaoForm(){
+			//declarações de variavéis
 			var matricula = document.getElementById('idmatricula').value;
 			var nome = document.getElementById('idnome').value;
 			var idade = document.getElementById('ididade').value;
 			var senha = document.getElementById('idsenha').value;
 			var cfsenha = document.getElementById('idcfsenha').value;
-            if (( matricula != null || matricula != "") && ( nome != null || nome != "") && ( idade != null || idade != "")) {
+			//verificar se os campos estão preenchios
+            if (matricula != "") {
+				if(nome!= ""){
 
-            	if (senha == cfsenha) {
-            		alert("formulario correto!")
-            		return true;
+				if(idade!=""){
+
+
+
+              if (senha == cfsenha) {
+              	alert("login efetuado!");
+                return true;
+              }
+            		
             	}
-            }
-            
+            }}
+                          alert("cadastro incorreto!");
             return false;
     }
 	</script>
@@ -30,14 +39,15 @@
 <body>
 	<center>
 		<form class="form" action="index.html" method="post" id="formulario">
-			<h1>Sistema Infor 3AV - Cadastro de Aluno</h1>
+			<h1>Sistema Info 3AV - Cadastro de Aluno</h1>
+			<!-- campos para preencher -->
 			<h2>Matricula</h2>
 			<input class="input" type="text" name="matricula" id="idmatricula">
 			<h2>Nome</h2>
 			<input class="input" type="text" name="nome" id="idnome"><br/>
 			<h2>Sexo</h2>
-			<input type="radio" name="sexo" value="ascsacF">
-			<input type="radio" name="sexo" value="M">
+			<input type="radio" name="sexo" value="ascsacF"><label class="sexo"><b>Masculino</b></label>
+			<input type="radio" name="sexo" value="M"><label class="sexo"><b>Feminino</b></label>
 			<h2>Idade</h2>
 			<input class="input" type="number" name="idade" id="ididade">
 			<h2>Data de aniversario</h2>
@@ -46,9 +56,10 @@
 			<input class="input" type="password" name="senha" id="idsenha">
 			<h2>Confirmar Senha</h2>
 			<input class="input" type="password" name="cfsenha" id="idcfsenha"><br/><br/><br/><br/>	
-
+			<!-- botões de controle do site -->
 			<input type="submit" id="enviar" onclick="return validacaoForm()" name="enviar" value="enviar">
 			<input class="botao" id="reset" type="reset" name="resetar" value="resetar campos">
+			<input type="submit" id="voltar" onclick="window.history.go(-1)" name="voltar" value="voltar">
 		</form>
 	</center>
 </body>

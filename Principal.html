@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Autênticação</title>
+	<meta charset="utf-8">
+	<link href="_css/modelo.css" rel="stylesheet"> <!-- link para importar o css da pagina -->
+	<script>
+	$(document).ready(function(){
+	    $("input").fadeIn();
+	});
+
+   <!-- funçao para validar o formulario --> function validadeForm(){ 
+   <!-- variavel livro -->	var livro = document.getElementById('livro').value; 
+   <!-- variavel foto -->	var foto = document.getElementById('mandarfoto').value;
+   <!-- variavel tempo -->	var tempo = document.getElementById('tempo').value; 
+   <!-- se livro -->     if (livro != "") {
+   <!-- se livro --> if (tempo != "") {
+   <!-- alert para aparecer uma msg na tela --> alert("pedido recebido!");	
+                return true;
+              }
+            }else if(foto != ""){
+            	if (tempo != "") {
+  <!-- alert para aparecer uma msg na tela se o aluno nao souber o nome livro --> alert("pedido recebido!");	
+	                return true;
+              	}
+  <!-- ira aparecer se o aluno nao digitar nos campos corretamente --> alert("livro incorreto!");
+              return false;
+            }else{
+            	alert("livro incorreto!");
+            }
+    }
+	</script>
+</head>
+<body>
+	<center>
+	<!-- tag do formulario -->	<form class="form" action="principal.html" method="post" id="formulario">
+			<!-- tag h1, cabeçalho --><h1>Bem-vindo a biblioteca virtual de Info 3AV</h1>
+			<!-- tag h2, segundo cabeçalho --><h2>Qual livro voce pretende pegar?</h2>
+			<!-- tag para campo de texto do livro --><input class="input" type="text" name="livro" id="livro" ><br/>
+			<h2>Quanto tempo voce ira ficar com ele?</h2>
+			<!-- tag select para campo de texto do tempo --><select name="dias" id="tempo" >
+	<option value="um dia">Um dia</option>
+	<option value="uma semana">Uma semana</option>
+	<option value="duas semanas">Duas semanas</option>
+	</select><br/><br/>
+	<!-- tag h3, terceiro cabeçalho --><h3>Caso voce nao esteja lembrando o nome do livro mande um foto para verificarmos se esta disponivel</h3>
+<input type="file" name="uplarquivo" id="mandarfoto" ><br/><br/><br/>
+			<!-- botao enviar --><input type="submit" id="enviar" onclick="return validadeForm()" name="enviar" value="enviar">
+			<!-- botao resetar, para excluir os dados nos campos --><input class="botao" id="reset" type="reset" name="resetar" value="resetar campos">
+			<!-- botao voltar --><input type="submit" id="voltar" onclick="window.history.go(-1)" name="voltar" value="voltar">
+		<!-- tag para fechar o formulario --></form>
+	</center>
+</body>
+</html>

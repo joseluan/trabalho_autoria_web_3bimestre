@@ -37,6 +37,21 @@ input#enviar{
 	padding: 5px;
 	font-size: 12pt;
 }
+input#voltar{
+	position: absolute;
+	background-color: #8B0000;
+	color: #fff;
+	padding: 5px;
+	font-size: 12pt;
+	right: 30%;
+}
+select#tempo{
+background-color: #8B0000;
+	color: #fff;
+	padding: 5px;
+	font-size: 12pt;
+
+}
 
 .form{
 	background: url('../_imagen/fundo_form.jpg');
@@ -48,4 +63,16 @@ input#enviar{
 }
 h2{
 	font-family: arial;
+}
+h3{
+	font-family: arial;
+	font-size: 10pt;
+}
+label.sexo{
+	background-color: #8B0000;
+	color: #fff;
+	padding: 5px;
+	font-size: 18pt;
+	right: 30%;
+	
 }
