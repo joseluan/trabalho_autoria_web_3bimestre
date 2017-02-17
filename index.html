@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Autênticação</title>
+	<meta charset="utf-8">
+	<link href="_css/modelo.css" rel="stylesheet">
+	<script>
+	$(document).ready(function(){
+	    $("input").fadeIn();
+	});
+
+	function validacaoForm(){
+            if (document.getElementById('idmatricula').value != null || document.getElementById('idmatricula').value != "") {
+
+              if (document.getElementById('idsenha').value != null || document.getElementById('idsenha').value != "") {
+              	alert("formulario correto!")
+                return true;
+              }
+            }
+              return false;
+    }
+	</script>
+</head>
+<body>
+	<center>
+		<form class="form" action="principal.html" method="post" id="formulario">
+			<h1>Sistema Infor 3AV</h1>
+			<h2>Matricula</h2>
+			<input class="input" type="text" name="matricula" id="idmatricula"><br/>
+			<h2>Senha</h2>
+			<input class="input" type="password" name="senha" id="idsenha"><br/><br/><br/><br/>	
+			<input type="submit" id="enviar" onclick="return validacaoForm()" name="enviar" value="enviar">
+			<a href="cadastro_aluno.html" id="cadastro">Cadastrar Aluno><a/>
+			<input class="botao" id="reset" type="reset" name="resetar" value="resetar campos">
+		</form>
+	</center>
+</body>
+</html>
